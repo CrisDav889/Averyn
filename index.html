@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Averyn | Soluciones Digitales Premium para Empresas</title>
+    <meta name="description" content="Averyn desarrolla software a medida y soluciones digitales premium para empresas que buscan automatizar procesos y destacar en el mundo digital.">
+    <meta name="keywords" content="desarrollo web, aplicaciones móviles, automatización, software a medida, soluciones digitales, empresas, México, tecnología, Material You">
+    <meta name="author" content="Averyn">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.averyn.com/"> <!-- Reemplazar con URL real -->
+    <meta property="og:title" content="Averyn | Soluciones Digitales Premium para Empresas">
+    <meta property="og:description" content="Desarrollamos software a medida y soluciones digitales premium para empresas que buscan automatizar procesos y destacar en el mundo digital.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4F378B/EADDFF?text=Averyn_Social_Share"> <!-- Placeholder, reemplazar con imagen real -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.averyn.com/"> <!-- Reemplazar con URL real -->
+    <meta property="twitter:title" content="Averyn | Soluciones Digitales Premium para Empresas">
+    <meta property="twitter:description" content="Desarrollamos software a medida y soluciones digitales premium para empresas que buscan automatizar procesos y destacar en el mundo digital.">
+    <meta property="twitter:image" content="https://placehold.co/1200x675/4F378B/EADDFF?text=Averyn_Twitter_Share"> <!-- Placeholder, reemplazar con imagen real -->
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Estilos básicos integrados con Material You -->
+    <style>
+        :root {
+            /* Colores Material You - Tema Oscuro */
+            --primary-color: #D0BCFF; /* Un púrpura suave */
+            --on-primary-color: #381E72;
+            --primary-container-color: #4F378B;
+            --on-primary-container-color: #EADDFF;
+
+            --secondary-color: #CCC2DC; /* Un gris-púrpura suave */
+            --on-secondary-color: #332D41;
+            --secondary-container-color: #4A4458;
+            --on-secondary-container-color: #E8DEF8;
+
+            --tertiary-color: #EFB8C8; /* Un rosa suave */
+            --on-tertiary-color: #492532;
+            --tertiary-container-color: #633B48;
+            --on-tertiary-container-color: #FFD8E4;
+
+            --background-color: #1C1B1F; /* Fondo oscuro principal */
+            --on-background-color: #E6E1E5; /* Texto sobre fondo */
+
+            --surface-color: #1C1B1F; /* Superficies (tarjetas, formularios) */
+            --on-surface-color: #E6E1E5; /* Texto sobre superficies */
+            --surface-variant-color: #49454F; /* Superficies variantes */
+            --on-surface-variant-color: #CAC4D0; /* Texto sobre superficies variantes */
+
+            --outline-color: #948F99; /* Bordes y contornos */
+            --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra más suave */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--on-background-color);
+            background-color: var(--background-color);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden; /* Prevenir scroll horizontal */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--surface-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Estilo para el logo de texto */
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800; /* Más audaz */
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background-color: var(--surface-variant-color);
+            transition: background-color 0.3s, color 0.3s, transform 0.2s ease-out;
+        }
+
+        .logo-text:hover {
+            background-color: var(--primary-container-color);
+            color: var(--on-primary-container-color);
+            transform: scale(1.05); /* Pequeño zoom en hover */
+        }
+        
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: var(--on-surface-color);
+            font-weight: 500;
+            transition: color 0.3s, transform 0.2s ease-out;
+            position: relative;
+        }
+        
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease-out;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav a:hover, .cta-nav {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 20px;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--on-surface-color);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Estilos para el menú móvil */
+        .nav.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: var(--surface-color);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            padding: 1rem 20px;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav.open li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary-container-color) 0%, var(--background-color) 100%); 
+            color: var(--on-primary-container-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh; /* Más alto */
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Alineación de texto a la izquierda por defecto */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat; 
+            opacity: 0.05;
+            z-index: 1;
+        }
+        
+        .hero .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+            gap: 40px; /* Espacio entre contenido e imagen */
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px; /* Controlar ancho del contenido */
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem; /* Más grande */
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1; /* Más compacto */
+            color: var(--on-primary-container-color);
+        }
+        
+        .subtitle {
+            font-size: 1.6rem; /* Más grande */
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+            box-shadow: 0 3px 6px var(--shadow-color);
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--on-primary-color);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-container-color);
+            color: var(--on-primary-container-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border-color: var(--outline-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--surface-variant-color);
+            color: var(--on-surface-variant-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px; /* Espacio para el borde */
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px solid var(--primary-color); /* Borde decorativo */
+            border-radius: 36px; /* Más redondeado */
+            transform: rotate(-3deg); /* Inclinación opuesta */
+            transition: transform 0.3s ease-in-out;
+            z-index: 0;
+        }
+
+        .hero-image:hover::before {
+            transform: rotate(0deg);
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 28px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            transform: rotate(2deg);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img:hover {
+            transform: rotate(0deg) scale(1.01);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0; /* Más padding para secciones */
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem; /* Más grande */
+            font-weight: 800; /* Más audaz */
+            margin-bottom: 1rem;
+            color: var(--on-background-color);
+        }
+        
+        .section-header p {
+            font-size: 1.25rem; /* Más grande */
+            color: var(--on-surface-variant-color);
+            max-width: 700px; /* Más ancho */
+            margin: 0 auto;
+        }
+        
+        /* Services */
+        .services {
+            background: var(--secondary-container-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min-width ligeramente mayor */
+            gap: 2.5rem; /* Más espacio */
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: var(--surface-color);
+            padding: 2.5rem; /* Más padding */
+            border-radius: 20px; /* Más redondeado */
+            box-shadow: 0 8px 20px var(--shadow-color); /* Sombra más pronunciada */
+            text-align: center;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            border: 1px solid transparent; /* Borde sutil */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02); /* Efecto más dinámico */
+            box-shadow: 0 12px 25px var(--shadow-color);
+            border-color: var(--primary-color); /* Borde en hover */
+        }
+        
+        .service-icon {
+            width: 90px; /* Más grande */
+            height: 90px; /* Más grande */
+            margin: 0 auto 1.8rem; /* Más margen */
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+        
+        .service-icon img {
+            width: 45px; /* Más grande */
+            height: 45px; /* Más grande */
+            filter: brightness(0) invert(1);
+        }
+        
+        .service-card h3 {
+            font-size: 1.75rem; /* Más grande */
+            font-weight: 700; /* Más audaz */
+            margin-bottom: 1rem;
+            color: var(--on-surface-color);
+        }
+        
+        .service-card p {
+            color: var(--on-surface-variant-color);
+            margin-bottom: 1.8rem; /* Más margen */
+        }
+        
+        .service-features {
+            list-style: none;
+            text-align: left;
+            padding-left: 1.5rem; /* Ajustar padding */
+        }
+        
+        .service-features li {
+            padding: 0.6rem 0; /* Más padding */
+            color: var(--on-surface-variant-color);
+            position: relative;
+            padding-left: 2rem; /* Más espacio para el check */
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em; /* Check más grande */
+        }
+        
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem; /* Más espacio */
+            margin-bottom: 3rem;
+        }
+        
+        .portfolio-item {
+            background: var(--surface-color);
+            border-radius: 20px; /* Más redondeado */
+            overflow: hidden;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 12px 25px var(--shadow-color);
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 280px; /* Más alto */
+            object-fit: cover;
+            transition: transform 0.3s ease-out;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05); /* Zoom en la imagen al hacer hover */
+        }
+        
+        .portfolio-content {
+            padding: 1.8rem; /* Más padding */
+        }
+        
+        .portfolio-content h3 {
+            font-size: 1.5rem; /* Más grande */
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--on-surface-color);
+        }
+        
+        .portfolio-category {
+            color: var(--primary-color);
+            font-size: 0.95rem; /* Ligeramente más grande */
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        
+        .portfolio-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex; /* Para alinear el icono si se agrega */
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .portfolio-link:hover {
+            color: var(--on-primary-color); /* Color de hover diferente */
+        }
+        
+        /* About */
+        .about {
+            background: var(--secondary-container-color);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem; /* Más espacio */
+            align-items: center;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptable */
+            gap: 2.5rem; /* Más espacio */
+            margin-top: 3rem; /* Más margen */
+        }
+        
+        .stat-item {
+            text-align: center;
+            background-color: var(--surface-variant-color); /* Fondo para cada estadística */
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+        
+        .stat-number {
+            font-size: 3rem; /* Más grande */
+            font-weight: 800; /* Más audaz */
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--on-surface-variant-color);
+            font-weight: 600; /* Más audaz */
+            font-size: 1.1rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px; /* Más redondeado */
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+        
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem; /* Más espacio */
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem; /* Más margen */
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem; /* Más margen */
+            font-weight: 600; /* Más audaz */
+            color: var(--on-surface-color);
+            font-size: 1.1rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px; /* Más padding */
+            border: 1px solid var(--outline-color);
+            border-radius: 12px; /* Más redondeado */
+            font-size: 1rem;
+            background-color: var(--surface-variant-color);
+            color: var(--on-surface-variant-color);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(208, 188, 255, 0.3); /* Sombra de enfoque Material You */
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 2.5rem; /* Más margen */
+            color: var(--on-background-color);
+            font-size: 2rem; /* Más grande */
+            font-weight: 700;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem; /* Más margen */
+        }
+        
+        .info-icon {
+            width: 60px; /* Más grande */
+            height: 60px; /* Más grande */
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            flex-shrink: 0; /* Prevenir que se encoja */
+        }
+        
+        .info-icon img {
+            width: 30px; /* Más grande */
+            height: 30px; /* Más grande */
+            filter: brightness(0) invert(1);
+        }
+        
+        .info-content {
+            margin-left: 1.5rem; /* Más margen */
+        }
+
+        .info-content h4 {
+            font-weight: 700; /* Más audaz */
+            margin-bottom: 0.4rem;
+            color: var(--on-surface-color);
+            font-size: 1.25rem;
+        }
+        
+        .info-content a, .info-content p {
+            color: var(--on-surface-variant-color);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+
+        .info-content a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.2rem; /* Más espacio */
+            margin-top: 3rem; /* Más margen */
+        }
+        
+        .social-links a {
+            width: 48px; /* Más grande */
+            height: 48px; /* Más grande */
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.2s ease-out;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-container-color);
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        .social-links img {
+            width: 24px; /* Más grande */
+            height: 24px; /* Más grande */
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--surface-color);
+            color: var(--on-surface-color);
+            padding: 4rem 0 2rem; /* Más padding */
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajuste para más columnas */
+            gap: 2.5rem; /* Más espacio */
+            margin-bottom: 2.5rem; /* Más margen */
+        }
+        
+        .footer-brand p {
+            color: var(--on-surface-variant-color);
+            margin-top: 1.2rem; /* Más margen */
+            font-size: 0.95rem;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 1.2rem; /* Más margen */
+            color: var(--on-surface-color);
+            font-size: 1.15rem; /* Más grande */
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.6rem; /* Más margen */
+        }
+        
+        .footer-links a {
+            color: var(--on-surface-variant-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-cta h4 {
+            margin-bottom: 1.2rem;
+            color: var(--on-surface-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        
+        .footer-cta p {
+            color: var(--on-surface-variant-color);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--outline-color);
+            padding-top: 1.5rem; /* Más padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--on-surface-variant-color);
+        }
+
+        .footer-bottom p {
+            width: auto; /* Permitir que ocupe el ancho necesario */
+            margin-bottom: 0; /* Eliminar margen en desktop */
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 1.5rem; /* Más espacio */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .legal-links a {
+            color: var(--on-surface-variant-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .legal-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .section-cta {
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-image {
+                padding: 0; /* Eliminar padding extra en móvil */
+            }
+            .hero-image::before {
+                border: none; /* Ocultar el borde decorativo en móvil */
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+            .footer-bottom p {
+                margin-bottom: 1rem;
+            }
+            .legal-links {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .btn {
+                width: 100%; /* Botones de ancho completo en móvil */
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .section-header p {
+                font-size: 1rem;
+            }
+            .services-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            .stat-item {
+                padding: 1rem;
+            }
+            .contact-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animaciones */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: none; /* Remove initial animation to be controlled by JS */
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilo para el mensaje de confirmación/error */
+        #form-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        #form-message.success {
+            background-color: var(--primary-container-color);
+            color: var(--on-primary-container-color);
+        }
+
+        #form-message.error {
+            background-color: var(--tertiary-container-color); /* Usar color de Material You para errores */
+            color: var(--on-tertiary-container-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo-text" aria-label="Averyn Inicio">Averyn</a>
+            <nav class="nav" id="main-nav">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto" class="cta-nav">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Menú" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-in">Soluciones digitales que <br>transforman negocios</h1>
+                    <p class="subtitle animate-in">Desarrollamos software premium para empresas que buscan eficiencia, presencia digital y crecimiento escalable.</p>
+                    <div class="hero-cta animate-in">
+                        <a href="#contacto" class="btn btn-primary">Hablemos de tu proyecto</a>
+                        <a href="#servicios" class="btn btn-secondary">Nuestros servicios</a>
+                    </div>
+                </div>
+                <div class="hero-image animate-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dashboard empresarial moderno con gráficos y datos" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="services">
+            <div class="container">
+                <div class="section-header animate-in">
+                    <h2>Servicios de clase empresarial</h2>
+                    <p>Soluciones tecnológicas diseñadas para optimizar y escalar tu negocio</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card animate-in">
+                        <div class="service-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Icono de Desarrollo Web" loading="lazy">
+                        </div>
+                        <h3>Desarrollo Web Corporativo</h3>
+                        <p>Plataformas web a medida con enfoque en rendimiento, seguridad y experiencia de usuario profesional.</p>
+                        <ul class="service-features">
+                            <li>Sitios institucionales y corporativos</li>
+                            <li>Portales empresariales y extranets</li>
+                            <li>Landing pages de alto impacto</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card animate-in">
+                        <div class="service-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Icono de Aplicaciones Móviles" loading="lazy">
+                        </div>
+                        <h3>Aplicaciones Móviles Nativas</h3>
+                        <p>Apps nativas e híbridas desarrolladas para iOS y Android con arquitecturas escalables y UX/UI intuitivas.</p>
+                        <ul class="service-features">
+                            <li>Diseño UI/UX centrado en el usuario</li>
+                            <li>Integración con sistemas existentes</li>
+                            <li>Rendimiento y seguridad optimizados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card animate-in">
+                        <div class="service-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2942/2942813.png" alt="Icono de Automatización" loading="lazy">
+                        </div>
+                        <h3>Automatización de Procesos (RPA)</h3>
+                        <p>Digitalizamos y optimizamos tus flujos de trabajo repetitivos para maximizar eficiencia y reducir costos operativos.</p>
+                        <ul class="service-features">
+                            <li>Automatización Robótica de Procesos (RPA)</li>
+                            <li>Diseño de workflows personalizados</li>
+                            <li>Integración de sistemas y APIs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section-cta animate-in">
+                    <a href="#contacto" class="btn btn-primary">Personaliza tu solución</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Portafolio -->
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <div class="section-header animate-in">
+                    <h2>Proyectos destacados</h2>
+                    <p>Experiencia tangible en soluciones digitales que impulsan el éxito empresarial</p>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item animate-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Interfaz de sistema de gestión financiera con gráficos de datos" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Plataforma de Gestión Financiera</h3>
+                            <p class="portfolio-category">Automatización · Web App</p>
+                            <p>Sistema integral para gestión de inversiones y reporting automatizado para firma financiera, mejorando la toma de decisiones.</p>
+                            <a href="#" class="portfolio-link">Ver estudio de caso →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Persona utilizando una tablet en un entorno de tienda, representando una solución retail" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Ecosistema Retail Omnicanal</h3>
+                            <p class="portfolio-category">App Móvil · Integración</p>
+                            <p>Solución unificada para cadena de retail con gestión de inventario, ventas y fidelización de clientes, optimizando la experiencia de compra.</p>
+                            <a href="#" class="portfolio-link">Ver estudio de caso →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item animate-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Gráfico de datos en una pantalla de computadora, simbolizando una plataforma SaaS" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Plataforma SaaS para RRHH</h3>
+                            <p class="portfolio-category">Web App · Cloud</p>
+                            <p>Sistema de gestión de talento humano con IA para análisis predictivo de rotación y optimización de procesos de contratación.</p>
+                            <a href="#" class="portfolio-link">Ver estudio de caso →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-cta animate-in">
+                    <a href="#" class="btn btn-secondary">Ver más proyectos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="animate-in">
+                        <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                            <h2>Excelencia técnica, enfoque empresarial</h2>
+                        </div>
+                        <p>En Averyn combinamos expertise tecnológico con comprensión profunda de necesidades empresariales. Fundada en 2018, nos especializamos en desarrollar soluciones que generan impacto tangible en la productividad y crecimiento de nuestros clientes.</p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item animate-in">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Proyectos entregados</div>
+                            </div>
+                            <div class="stat-item animate-in">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Clientes satisfechos</div>
+                            </div>
+                            <div class="stat-item animate-in">
+                                <div class="stat-number">15</div>
+                                <div class="stat-label">Expertos en equipo</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image animate-in">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Equipo de profesionales colaborando en una oficina moderna" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <div class="section-header animate-in">
+                    <h2>Hablemos de tu proyecto</h2>
+                    <p>Cuéntanos tus desafíos y diseñaremos juntos la solución ideal</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-form animate-in">
+                        <form id="project-form">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Servicio de interés</label>
+                                <select id="service" name="service">
+                                    <option value="web">Desarrollo Web</option>
+                                    <option value="app">Aplicaciones Móviles</option>
+                                    <option value="automation">Automatización</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Cuéntanos sobre tu proyecto</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                            <div id="form-message"></div> <!-- Mensaje de feedback para el usuario -->
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info animate-in">
+                        <h3>Otras formas de contacto</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Icono de Email" loading="lazy">
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <a href="mailto:averyn1corporative@gmail.com">averyn1corporative@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Icono de Teléfono" loading="lazy">
+                            </div>
+                            <div class="info-content">
+                                <h4>Teléfono</h4>
+                                <a href="tel:+521234567890">+52 123 456 7890</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Icono de Ubicación" loading="lazy">
+                            </div>
+                            <div class="info-content">
+                                <h4>Oficinas</h4>
+                                <p>Av. Reforma 123, CDMX, México</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Icono de LinkedIn" loading="lazy">
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Icono de Twitter" loading="lazy">
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Icono de Instagram" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid animate-in">
+                <div class="footer-brand">
+                    <a href="/" class="logo-text" aria-label="Averyn Inicio">Averyn</a>
+                    <p>Soluciones digitales premium para empresas visionarias.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Desarrollo Web</a></li>
+                        <li><a href="#servicios">Aplicaciones Móviles</a></li>
+                        <li><a href="#servicios">Automatización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Casos de Éxito</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta">
+                    <h4>¿Listo para empezar?</h4>
+                    <p>Transforma tu negocio con nuestras soluciones.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom animate-in">
+                <p>&copy; 2024 Averyn. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            });
+
+            // Cerrar el menú si se hace clic fuera o en un enlace
+            document.querySelectorAll('#main-nav a').forEach(item => {
+                item.addEventListener('click', () => {
+                    mainNav.classList.remove('open');
+                    menuToggle.classList.remove('open');
+                });
+            });
+
+            // Animación al hacer scroll
+            const animateElements = document.querySelectorAll('.animate-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target); // Dejar de observar una vez animado
+                    }
+                });
+            }, {
+                threshold: 0.1 // El elemento es visible en un 10%
+            });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Funcionalidad del formulario de contacto
+            const projectForm = document.getElementById('project-form');
+            const formMessage = document.getElementById('form-message');
+
+            projectForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevenir el envío tradicional del formulario
+
+                const name = document.getElementById('name').value;
+                const company = document.getElementById('company').value;
+                const email = document.getElementById('email').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+
+                // Construir el cuerpo del correo electrónico
+                const emailBody = `
+                    Nombre: ${name}
+                    Empresa: ${company}
+                    Email: ${email}
+                    Servicio de Interés: ${service}
+                    Mensaje:
+                    ${message}
+                `;
+
+                // Codificar el asunto y el cuerpo para la URL
+                const subject = encodeURIComponent('Consulta de Proyecto desde Averyn Website');
+                const body = encodeURIComponent(emailBody);
+
+                // Dirección de correo a la que se enviará el formulario
+                const recipientEmail = 'averyn1corporative@gmail.com'; 
+
+                // Intentar abrir Gmail en una nueva pestaña
+                const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${subject}&body=${body}`;
+                
+                // Abrir en una nueva pestaña
+                const newWindow = window.open(gmailLink, '_blank');
+
+                // Si la nueva ventana no se abre (bloqueador de pop-ups, etc.), intentar con mailto
+                if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                    // Fallback a mailto si no se pudo abrir Gmail
+                    window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+                    formMessage.textContent = 'Tu cliente de correo electrónico predeterminado se abrirá con los detalles del formulario.';
+                } else {
+                    formMessage.textContent = 'Se ha abierto una nueva pestaña para redactar tu correo en Gmail.';
+                }
+                
+                formMessage.className = 'success'; // Reset class and add success
+                formMessage.style.display = 'block'; // Show the message
+
+                // Opcional: Limpiar el formulario después de un breve retraso
+                setTimeout(() => {
+                    projectForm.reset();
+                    formMessage.style.display = 'none';
+                }, 5000); // Ocultar el mensaje después de 5 segundos
+            });
+        });
+    </script>
+</body>
+</html>
